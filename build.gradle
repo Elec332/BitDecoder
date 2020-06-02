@@ -1,0 +1,31 @@
+plugins {
+    id "nl.elec332.gradle.ossrhplugin" version "1.0.2-Beta"
+    id "com.dua3.gradle.jpms" version "1.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+group 'nl.elec332.lib'
+archivesBaseName = "BitDecoder"
+version '0.1'
+
+sourceCompatibility = 1.11
+
+dependencies {
+    compile "nl.elec332.lib:eleclib:0.4.1.1-Alpha"
+}
+
+ossrh {
+    description = 'Packet decoder on bit level for Java'
+    githubUrl = 'https://github.com/Elec332/BitDecoder'
+
+    license {
+        name 'GNU Lesser General Public License, version 2.1'
+        url 'https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt'
+    }
+    developer {
+        name 'Elec332'
+    }
+}
