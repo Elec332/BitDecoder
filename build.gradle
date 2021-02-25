@@ -1,7 +1,8 @@
 plugins {
     id "nl.elec332.gradle.ossrhplugin" version "1.0.2-Beta"
-    id "com.dua3.gradle.jpms" version "1.0"
 }
+
+apply plugin: "java"
 
 repositories {
     mavenCentral()
@@ -15,6 +16,10 @@ sourceCompatibility = 1.11
 
 dependencies {
     compile "nl.elec332.lib:eleclib:0.4.1.1-Alpha"
+}
+
+java {
+    modularity.inferModulePath = true
 }
 
 ossrh {

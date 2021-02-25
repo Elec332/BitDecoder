@@ -148,7 +148,7 @@ public interface IBitReader {
 
         int times = Math.floorDiv(bits, 8);
         for (int i = 0; i < times; i++) {
-            ret |= readByte() << (bits - (i * 8));
+            ret |= (long) readByte() << (bits - ((i + 1) * 8));
         }
         if (bits % 8 > 0) {
             ret |= readFewBits(bits % 8);
